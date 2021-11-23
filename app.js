@@ -7,7 +7,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    res.render('template', {
+    res.render('pages/home', {
       meta: {
         data: {
           
@@ -16,8 +16,16 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/1', (req, res) => {
-  res.render('pages/1')
+app.get('/about', (req, res) => {
+  res.render('pages/about')
+})
+
+app.get('/collections', (req, res) => {
+  res.render('pages/collections')
+})
+
+app.get('/detail/:', (req, res) => {
+  res.render('pages/detail')
 })
 
 app.listen(port, () => {
